@@ -41,7 +41,7 @@ Binarizer = function(dataFrame, columns) {
 }
 
 # create title field and convert fields to binary
-featuredData = Binarizer(TitleField(cleanData), c("Title", "Pclass", "Embarked"))
+featuredData = Binarizer(TitleField(cleanData), c("Title", "Pclass", "Embarked", "Sex"))
 
 # remove cleanData, TitleField and Binarizer from memory
 rm(cleanData, TitleField, Binarizer)
