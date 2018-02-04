@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1517772485805.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "592048978",
+    "id" : "6A0D99DE",
+    "lastKnownWriteTime" : 1517776924,
+    "last_content_update" : 1517776924438,
+    "path" : "~/Projects/R/RTitanicProject/FeatureEngineering.R",
+    "project_path" : "FeatureEngineering.R",
+    "properties" : {
+        "cursorPosition" : "21,4",
+        "scrollLine" : "14",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

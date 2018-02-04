@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1517775762516.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "738BA80B",
+    "lastKnownWriteTime" : 1517776932,
+    "last_content_update" : 1517776932647,
+    "path" : "~/Projects/R/RTitanicProject/MachineLearning.R",
+    "project_path" : "MachineLearning.R",
+    "properties" : {
+        "cursorPosition" : "2,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
