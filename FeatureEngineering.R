@@ -8,7 +8,7 @@ TitleField = function(dataFrame) {
   
   # create title field from name field
   dataFrame[["Title"]] = sapply(dataFrame[["Name"]], function(x) {
-    strsplit(strsplit(x, ",")[[1]][2], "[.]")[[1]][1]
+    gsub(" ", "", strsplit(strsplit(x, ",")[[1]][2], "[.]")[[1]][1])
   })
   
   return(dataFrame)
@@ -25,7 +25,7 @@ Binarizer = function(dataFrame, columns) {
     
     for(value in uniqueValues) {
       
-      dataFrame[[paste0(column, value)]] = sapply(dataFrame[[column]], FUN = function(x) {
+      dataFrame[[paste0(column, "_", value)]] = sapply(dataFrame[[column]], FUN = function(x) {
         ifelse(x == value, 1, 0)
       })
       
