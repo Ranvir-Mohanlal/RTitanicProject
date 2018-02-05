@@ -15,6 +15,27 @@ TitleField = function(dataFrame) {
   
 }
 
+# function to create family id
+FamilyId = function(dataFrame) {
+  
+  # add family size field
+  dataFrame[["FamilySize"]] = dataFrame[["Parch"]] + dataFrame[["SibSp"]] + 1
+  
+  # add surname field
+  dataFrame[["Surname"]] = sapply(dataFrame[["Name"]], function(x) {
+    gsub(" ", "", strsplit(x, ",")[[1]][1])
+  })
+  
+  # create family id field
+  dataFrame[["FamilyId"]] = paste0(dataFrame[["FamilySize"]], dataFrame[["Surname"]])
+  
+  # remove family size and surname fields
+  dataFrame = dataFrame[, !(colnames(dataFrame) %in% c("Surname"))]
+  
+  return(dataFrame)
+  
+}
+
 # function to convert input columns in input data frame to binary
 Binarizer = function(dataFrame, columns) {
   
