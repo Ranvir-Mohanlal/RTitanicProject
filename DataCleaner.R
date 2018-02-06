@@ -4,6 +4,7 @@
 source("DataLoader.R")
 
 # convert columns to correct types
+rawData[["Survived"]] = as.factor(rawData[["Survived"]])
 rawData[["Embarked"]] = as.character(rawData[["Embarked"]])
 rawData[["Name"]] = as.character(rawData[["Name"]])
 rawData[["Pclass"]] = as.character(rawData[["Pclass"]])
@@ -16,15 +17,17 @@ MeanValueNaFill = function(dataFrame, column) {
   dataFrame[[column]][which(is.na(dataFrame[[column]]))] = meanValue
   
   return(dataFrame)
+  
 }
 
 # fill in missing values of age and fare with their mean values
 cleanData = MeanValueNaFill(MeanValueNaFill(rawData, "Fare"), "Age")
-
-
 
 # fill in missing value of embarked with 'S'
 cleanData[["Embarked"]][which(cleanData[["Embarked"]] == "")] = "S"
 
 # remove rawData and MeanValueFill from memory
 rm(rawData, MeanValueNaFill)
+
+# garbage cleanup
+gc()

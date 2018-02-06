@@ -14,3 +14,6 @@ rawData = rbind(train, test)
 
 # remove train and test from memory
 rm(train, test)
+
+# garbage cleanup
+gc()

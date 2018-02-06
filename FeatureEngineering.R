@@ -12,7 +12,6 @@ TitleField = function(dataFrame) {
   })
   
   return(dataFrame)
-  
 }
 
 # function to create family id
@@ -61,8 +60,19 @@ Binarizer = function(dataFrame, columns) {
   
 }
 
+# function to drop unnecessary columns
+ColumnDropper = function(dataFrame) {
+  
+  dataFrame = dataFrame[, !(colnames(dataFrame) %in% c("Name", "SipSp", "Parch", "Ticket", "Cabin"))]
+  
+}
+
+
 # create title field and convert fields to binary
-featuredData = Binarizer(TitleField(cleanData), c("Title", "Pclass", "Embarked", "Sex"))
+featuredData = ColumnDropper(Binarizer(TitleField(cleanData), c("Title", "Pclass", "Embarked", "Sex")))
 
 # remove cleanData, TitleField and Binarizer from memory
-rm(cleanData, TitleField, Binarizer)
+rm(cleanData, TitleField, FamilyId, Binarizer, ColumnDropper)
+
+# garbage cleanup
+gc()
